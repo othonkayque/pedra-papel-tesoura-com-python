@@ -1,4 +1,4 @@
-import random, os
+import random, os, pyfiglet
 
 def limpar():
     os.system('cls')
@@ -13,27 +13,37 @@ def ppt(pontos_maquina = 0, pontos_pessoa = 0):
     print("pedra, papel ou tesoura?")
     r2 = input("Digite: ")
 
+    #resultados com pyfiglet
+
+    def empate():
+        print(pyfiglet.figlet_format("Empate"))
+    
+    def venceu():
+        print(pyfiglet.figlet_format("Venceu"))
+
+    def perdeu():
+        print(pyfiglet.figlet_format("Perdeu"))
 
     #opções da maquina vencendo
 
     if r1 == r2:
         limpar()
-        print("Empate")
+        empate()
 
 
     elif r1 == "pedra" and r2 == "tesoura":
         limpar()
-        print("A maquina venceu!")
+        perdeu()
         pontos_maquina = pontos_maquina + 1
 
     elif r1 == "tesoura" and r2 == "papel":
         limpar()
-        print("A maquina venceu!")
+        perdeu()
         pontos_maquina = pontos_maquina + 1
 
     elif r1 == "papel" and r2 == "pedra":
         limpar()
-        print("A maquina venceu!")
+        perdeu()
         pontos_maquina = pontos_maquina + 1
 
     else:
@@ -43,17 +53,17 @@ def ppt(pontos_maquina = 0, pontos_pessoa = 0):
 
     if r1 == "pedra" and r2 == "papel":
         limpar()
-        print("Você venceu!")
+        venceu()
         pontos_pessoa = pontos_pessoa + 1
 
     elif r1 == "tesoura" and r2 == "pedra":
         limpar()
-        print("Você venceu!")
+        venceu()
         pontos_pessoa = pontos_pessoa + 1
 
     elif r1 == "papel" and r2 == "tesoura":
         limpar()
-        print("Você venceu!")
+        venceu()
         pontos_pessoa = pontos_pessoa + 1
 
     else:
