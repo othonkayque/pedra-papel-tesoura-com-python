@@ -10,7 +10,7 @@ def ppt(pontos_maquina = 0, pontos_pessoa = 0):
     r1 = (random.choice(tupla))
     #print(r1)
 
-    print("pedra, papel ou tesoura?")
+    print("\n1 - pedra \n2 - papel \n3 - tesoura")
     r2 = input("Digite: ")
 
     #resultados com pyfiglet
@@ -31,17 +31,17 @@ def ppt(pontos_maquina = 0, pontos_pessoa = 0):
         empate()
 
 
-    elif r1 == "pedra" and r2 == "tesoura":
+    elif r1 == "pedra" and r2 == "tesoura" or r1 == "pedra" and r2 == "3":
         limpar()
         perdeu()
         pontos_maquina = pontos_maquina + 1
 
-    elif r1 == "tesoura" and r2 == "papel":
+    elif r1 == "tesoura" and r2 == "papel" or r1 == "tesoura" and r2 == "2":
         limpar()
         perdeu()
         pontos_maquina = pontos_maquina + 1
 
-    elif r1 == "papel" and r2 == "pedra":
+    elif r1 == "papel" and r2 == "pedra" or r1 == "papel" and r2 == "1":
         limpar()
         perdeu()
         pontos_maquina = pontos_maquina + 1
@@ -51,17 +51,17 @@ def ppt(pontos_maquina = 0, pontos_pessoa = 0):
 
     #opções da pessoa vencendo
 
-    if r1 == "pedra" and r2 == "papel":
+    if r1 == "pedra" and r2 == "papel" or r1 == "pedra" and r2 == "2":
         limpar()
         venceu()
         pontos_pessoa = pontos_pessoa + 1
 
-    elif r1 == "tesoura" and r2 == "pedra":
+    elif r1 == "tesoura" and r2 == "pedra" or r1 == "tesoura" and r2 == "1":
         limpar()
         venceu()
         pontos_pessoa = pontos_pessoa + 1
 
-    elif r1 == "papel" and r2 == "tesoura":
+    elif r1 == "papel" and r2 == "tesoura" or r1 == "papel" and r2 == "3":
         limpar()
         venceu()
         pontos_pessoa = pontos_pessoa + 1
